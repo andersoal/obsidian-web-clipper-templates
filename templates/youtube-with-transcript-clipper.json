@@ -7,12 +7,12 @@
 		{
 			"name": "created",
 			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm:ssZ\\\"}}",
-			"type": "date"
+			"type": "datetime"
 		},
 		{
 			"name": "reviewed",
 			"value": "",
-			"type": "text"
+			"type": "datetime"
 		},
 		{
 			"name": "url",
@@ -21,7 +21,7 @@
 		},
 		{
 			"name": "title",
-			"value": "{{title}}",
+			"value": "{{schema:@VideoObject:name}}",
 			"type": "text"
 		},
 		{
@@ -37,7 +37,7 @@
 		{
 			"name": "published",
 			"value": "{{schema:@VideoObject:uploadDate|date:\\\"YYYY-MM-DD\\\"}}",
-			"type": "date"
+			"type": "datetime"
 		},
 		{
 			"name": "duration",
@@ -51,6 +51,6 @@
 		}
 	],
 	"triggers": [],
-	"noteNameFormat": "{{schema:@VideoObject:uploadDate|date:\"YYYY-MM-DD\"}} VIDEO {{schema:@VideoObject:author}} - {{title|safe_name}}",
+	"noteNameFormat": "{{schema:@VideoObject:uploadDate|date:\"YYYY-MM-DD\"}} VIDEO {{schema:@VideoObject:author}} - {{schema:@VideoObject:name|safe_name|replace:\"\\#\":\"\",\"\\!\":\"\"|trim}}",
 	"path": ""
 }
