@@ -16,7 +16,7 @@
 		},
 		{
 			"name": "url",
-			"value": "{{url}}",
+			"value": "{{meta:property:og:url}}",
 			"type": "text"
 		},
 		{
