@@ -1,1 +1,6 @@
+# obsidian settings, plugins, etc.
+.obsidian/
+# obsidian trash-folder
+.trash/
+# macOS Finder, but I'm usually in the terminal
 .DS_Store
