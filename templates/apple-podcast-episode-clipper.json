@@ -2,7 +2,7 @@
 	"schemaVersion": "0.1.0",
 	"name": "Apple Podcast Episode",
 	"behavior": "create",
-	"noteContentFormat": "\n#podcast/backlog\n\n# {{schema:@PodcastEpisode:name}}\n\n{{schema:@PodcastEpisode:thumbnailUrl|image}}\n\n## Description\n\n{{schema:@PodcastEpisode:description}}\n\n## Notes\n\n",
+	"noteContentFormat": "\n#podcast/backlog\n\n# {{schema:@PodcastEpisode:name}}\n\n{{schema:@PodcastEpisode:thumbnailUrl|image:\"thumbnail|200\"}}\n\n## Description\n\n{{schema:@PodcastEpisode:description}}\n\n## Notes\n\n",
 	"properties": [
 		{
 			"name": "created",
