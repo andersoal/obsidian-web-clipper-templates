@@ -2,6 +2,8 @@
 # We need *Some* so we can address consistency
 .obsidian/core-plugins.json
 .obsidian/appearance.json
+.obsidian/workspace.json
+.obsidian/workspaces.json
 .obsidian/plugins/**/main.js
 .obsidian/plugins/**/styles.css
 
