@@ -1,3 +1,4 @@
+
 # Obsidian Web Clipper templates
 This is a community collection of templates for the official [Obsidian Web Clipper extension](https://github.com/obsidianmd/obsidian-clipper). We are still under construction.
 

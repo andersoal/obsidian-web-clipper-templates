@@ -1,24 +1,20 @@
-## Description of the template
+---
+aliases: Youtube with Transcript
+description:
+publish: true
+cover:
+permalink: youtube/youtube-with-transcript
+tags:
+---
 
-%% What does it do? Edit this in your PR %%
+Related guide: [[Clipper-guides/Obsidian Web Clipper Template Guide for YouTube with transcript]]
 
+This template should be able to extract:
+- video **upload date**, using `schema:@VideoObject:uploadDate`
+- video **duration** (in seconds), using `schema:@VideoObject:duration`
+- video **description**, using `{{schema:@VideoObject:description}}`
+- video **transcript**, using `selectorHtml:.ytd-transcript-segment-list-renderer`
 
-### Related resources
-%% Add a link to the guide and .json download, if any. Erase if there is none. %%
-**Related guide(s)**: `[Sample template](/Guides/sample-template.md)`
-**Download the `.json`**: `[sample-templayte.json](sample-template.json)`
-
-You can also copy the codeblock below to paste into Obsidian Clipper with the following steps.
-
-1. Copy the codeblock below
-2. Go to Obsidian Clipper.
-3. Go to Clipper settings
-4. Select **New template**.
-5. Select the **Import** button
-6. Paste the `.json` content into the Json template area.
-7. Select import. 
-
-%% Paste your .json contents in the json codeblock below %%
 ```json
 {
   "schemaVersion": "0.1.0",
