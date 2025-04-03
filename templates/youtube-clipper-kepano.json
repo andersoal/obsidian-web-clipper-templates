@@ -2,7 +2,7 @@
 	"schemaVersion": "0.1.0",
 	"name": "YouTube",
 	"behavior": "create",
-	"noteNameFormat": "{{schema:author|safe_name|trim}} – {{schema:name|safe_name|trim}}",
+	"noteNameFormat": "{{schema:author}} – {{schema:name}}",
 	"path": "Clipppings/Videos"
 	"noteContentFormat": "![{{schema:name}}]({{url}})",
 	"properties": [
