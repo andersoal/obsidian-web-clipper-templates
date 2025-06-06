@@ -2,7 +2,7 @@
 	"schemaVersion": "0.1.0",
 	"name": "YouTube with Summary and Timestamped Transcript",
 	"behavior": "create",
-	"noteContentFormat": "# {{meta:property:og:title}}\n\n## Summary\n\n{{\"A three-paragraph summary of the video based on the full transcript\"|blockquote}}\n\n## About\n\ntype:: #type/video/youtube/new\n\n## Embed\n\n![{{title}}]({{schema:@VideoObject:embedUrl|replace:\"embed/\":\"watch?v=\"}})\n\n## Description\n\n{{schema:@VideoObject:description}}\n\n## Transcript with timestamps\n\n{{selectorHtml:.ytd-transcript-segment-list-renderer|first|replace:\"&nbsp;\":\" \"|join|markdown}}\n\n{{selectorHtml:ytd-engagement-panel-section-list-renderer[visibility$=\\\"EXPANDED\\\"] #segments-container|strip_tags:\"h2,ytd-transcript-segment-renderer\"|replace:\"ytd-transcript-segment-renderer\":\"li\"|markdown}}",
+	"noteContentFormat": "# {{meta:property:og:title}}\n\n## Summary\n\n{{\"A three-paragraph summary of the video based on the full transcript\"|blockquote}}\n\n## About\n\ntype:: #type/video/youtube/new\n\n## Embed\n\n![{{title}}]({{schema:@VideoObject:embedUrl|replace:\"embed/\":\"watch?v=\"}})\n\n## Description\n\n{{schema:@VideoObject:description}}\n\n## Transcript with timestamps\n\n{{selectorHtml:ytd-engagement-panel-section-list-renderer[visibility$=\\\"EXPANDED\\\"] #segments-container|strip_tags:\"h2,ytd-transcript-segment-renderer\"|replace:\"ytd-transcript-segment-renderer\":\"li\"|markdown}}",
 	"properties": [
 		{
 			"name": "title",

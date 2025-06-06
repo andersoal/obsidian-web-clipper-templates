@@ -1,0 +1,59 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Old Reddit Post and Comments",
+	"behavior": "create",
+	"noteContentFormat": "# {{title|safe_name}} - r-{{selector:span.redditname}}\n\n{{selector:div.entry|join:\"\\n\\n---\\n\\n\"|replace:\"\\[–\\]\":\"## \"|replace:\"/permalink(?:\\n.+){4}\\n?/gm\":\"\"|replace:\"/(child\\)|children\\))(.)/g\":\"\\n\\n$2\"|replace:\"/(permalink|embed|share|save|report|parent|reply)+/g\":\"\"|replace:\"/\\n\\t+/gm\":\"\"|replace:\"/\\s+(?:[\\-\\d]+ points?){3}.+(\\n\\n)/gm\":\"$1\"|replace:\"/\\n+(\\n\\n)/gm\":\"$1\"|replace:\"/submitted \\d+ \\w+ ago by ([\\w]+\\b)\\s/g\":\" - u/$1\\n\\n\"|replace:\"/(## \\[deleted\\]) .+/g\":\"$1\"|replace:\"/## (\\[deleted\\])\\n\\n(\\[removed\\])/gm\":\"$1 + $2\"}}\n",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{title|safe_name}} - r-{{selector:span.redditname}}",
+			"type": "text"
+		},
+		{
+			"name": "source",
+			"value": "{{meta:property:og:site_name}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{selector:p.tagline > a.author|first}}",
+			"type": "multitext"
+		},
+		{
+			"name": "published",
+			"value": "{{selector:div.date > time?datetime|date:\\\"YYYY-MM-DD HH:mm:ss\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DD HH:mm:ss\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "clippings, {{site|kebab}}, {{selector:span.redditname}}",
+			"type": "multitext"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "words",
+			"value": "{{words}}",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"https://old.reddit.com/r/"
+	],
+	"noteNameFormat": "{{title|safe_name}} - r-{{selector:span.redditname}}",
+	"path": "Clippings/Posts/Reddit",
+	"context": "# {{title|safe_name}}\n\n{{selectorHtml:body|markdown|replace:\"/\\(\\d?)\\\\(\\.)/g\":\"$1$2\"|replace:\"/(\\n)\\\\/g\":\"\"}}"
+}
