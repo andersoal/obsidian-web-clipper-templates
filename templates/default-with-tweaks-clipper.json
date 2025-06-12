@@ -1,0 +1,57 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Default with tweaks",
+	"behavior": "create",
+	"noteContentFormat": "# {{title|safe_name}}\n\n## Summary\n\n{{\"Summarise the article in 3 paragraphs, Australian English, followed by a markdown H3 for Key Points with up to 7 bullet points of one short sentence each\"}}\n\n## Content\n\n{{selectorHtml:body|markdown|replace:\"/\\(\\d?)\\\\(\\.)/g\":\"$1$2\"|replace:\"/(\\n)\\\\/g\":\"\"}}",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{title|safe_name}}",
+			"type": "text"
+		},
+		{
+			"name": "source",
+			"value": "{{site}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{author}}",
+			"type": "multitext"
+		},
+		{
+			"name": "published",
+			"value": "{{published|date:\\\"YYYY-MM-DD HH:mm:ss\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DD HH:mm:ss\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "clippings, {{author|kebab}}, {{time|date:\\\"YYYY/MM/DD\\\"}}, {{site|kebab}}, {{meta:name:og:type|kebab}}, {{meta:name:keywords}}",
+			"type": "multitext"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "words",
+			"value": "{{words}}",
+			"type": "text"
+		}
+	],
+	"triggers": [],
+	"noteNameFormat": "{{title|safe_name}}",
+	"path": "Clippings",
+	"context": "# {{title|safe_name}}\n\n{{selectorHtml:body|markdown|replace:\"/\\(\\d?)\\\\(\\.)/g\":\"$1$2\"|replace:\"/(\\n)\\\\/g\":\"\"}}"
+}
