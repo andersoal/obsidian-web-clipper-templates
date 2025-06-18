@@ -2,7 +2,7 @@
 	"schemaVersion": "0.1.0",
 	"name": "Claude",
 	"behavior": "create",
-	"noteContentFormat": "# {{title|safe_name}}\n\n{{selectorHtml:div[data-test-render-count]|replace:\" tabindex=\\\"-1\\\"\":\"\"|replace:\"/<div[^?].*data-test-id=\\\"user-message\\\" (.*?)<\\/div>/g\":\"<h2>You said\\:<\\/h2><div\"|replace:\"/\\<svg.*?\\/svg>/g\":\"\"|replace:\"/<div[^<]*?pt-0 pr-8\\\">(.*?)\\/div>/g\":\"<blockquote>$1<\\/blockquote>\"|replace:\"/<div class=\\\\\\\"font-claude-message.*?mr-9\\\\\\\">/g\":\"### Claude\"|join:\"\\n---\\n\"|markdown|replace:\"\\\\---\":\"---\"|replace:\"\\\\###\":\"###\"|replace:\"\\\\. \":\". \"|replace:\"BC\":\"## User\\n\\n\"|replace:\"pythonCopy\":\"\")}}",
+	"noteContentFormat": "# {{title|safe_name}}\n\n{{selectorHtml:div[data-test-render-count]|replace:\" tabindex=\\\"-1\\\"\":\"\"|replace:\"/<div[^?].*data-test-id=\\\"user-message\\\" (.*?)<\\/div>/g\":\"<h2>You said\\:<\\/h2><div\"|replace:\"/\\<svg.*?\\/svg>/g\":\"\"|replace:\"/<div[^<]*?pt-0 pr-8\\\">(.*?)\\/div>/g\":\"<blockquote>$1<\\/blockquote>\"|replace:\"/<div class=\\\\\\\"font-claude-message.*?mr-9\\\\\\\">/g\":\"### Claude\"|join:\"\\n---\\n\"|markdown|replace:\"\\\\---\":\"---\"|replace:\"\\\\###\":\"###\"|replace:\"\\\\. \":\". \"|replace:\"BC\\n\\n\":\"## User\\n\\n\"|replace:\"/[R|D|G|L]\\n\\n(Request\\n\\n\\`[^\\n]+\\`\\n\\nResponse)\\n\\n\\`[^\\n]+\\`/gm\":\"$1 (truncated)\"|replace:\"/[W|E]\\n\\n(Request)\\n\\n\\`[^\\n]+\\`/gm\":\"$1 (truncated)\"}}",
 	"properties": [
 		{
 			"name": "title",

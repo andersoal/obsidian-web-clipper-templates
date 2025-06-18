@@ -1,0 +1,59 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Google AI Studio",
+	"behavior": "create",
+	"noteContentFormat": "# {{selector:div.page-title > h1|safe_name}}\n\n## Summary\n\n{{\"Summarise the article in 3 paragraphs, Australian English, followed by a markdown H3 for Key Points with up to 7 bullet points of one short sentence each\"}}\n\n## Content\n\n{{selectorHtml:div.chat-container|remove_html:\"ms-chat-settings-header,.actions-container\"|remove_tags:(\"ms-chat-session,ms-autoscroll-container,ms-text-chunk\")|strip_attr:(\"class,id\")|replace_tags:\"ms-thought-chunk\":\"blockquote\"|replace_tags:\"ms-chat-session\":\"div\"|replace_tags:\"ms-chat-turn\":\"div\"|replace_tags:\"ms-prompt-chunk\":\"div\"|replace:\"/(<div [^>]+user-prompt-container\\\">)/g\":\"$1<h3>User<\\/h3>\"|replace:\"/(<div [^\\>]+model-prompt-container\\\">)/g\":\"$1<h4>Model<\\/h4>\"|markdown|replace:\"/\\(\\d?)\\\\(\\.)/g\":\"$1$2\"|replace:\"/(\\n)\\\\/g\":\"\"|replace:\"\\_\":\"_\"|replace:\"/^(?:IGNORE|Use code|\\> (?:Collapse|chevron)).+\\n/g\":\"\"}}\n\nselectorHtml:ms-chat-turn|replace:\"<user-query-content\":\"<h2>User Message<\\/h2><div\"|replace:\"<\\/user-query-content>\":\"</div>\\n\\n\"|replace:\"<model-thoughts\":\"<blockquote><h4>Model Thoughts\\<\\/h4<div\"|replace:\"</model-thoughts>\":\"<\\/div><\\/blockquote>\\n\\n\"|replace:\"<model-response\":\"<h2>Model Response<\\/h2><div\"|replace:\"<\\/model-response>\":\"<\\/div><hr>\"|markdown|replace:\"\\\\\\*\":\"\\*\"|replace:\"/([\\d]?)\\\\(\\.)/g\":\"$1$2\"|replace:\"/(\\n)\\\\/g\":\"\"|replace:\"\\]\\n\\(\":\"](\"|replace:\"\\)\\[\":\"\\)\\n\\[\"|replace:\"/(\\[)[\\s\\n]*\\!\\[[^\\]]*\\]\\([^\\)]+(?:svg|webp|jpe?g|png|img|favicon|FAVICON)[^\\)]*\\)[\\s\\n]*/gm\":\"$1\"|replace:\"/[\\s\\n]+(?:Opens in a new window)?(\\])\\n?(\\()/gm\":\"$1$2\"|replace:\"/(\\[[^\\]\\n]+)[\\n\\s]+([^\\]\\n]*)[\\n\\s]*?(\\]\\()/gm\":\"$1 - $2$3\"}}\n\n\nselectorHtml:[data-testid*=\"conversation-turn\"]|replace:\"/(<https\\:\\/\\/docs\\.google.*?(?=\\\")).*?(Google Docs)/g\":\"[$2]($1)\"|replace:\"/<svg.*?svg>/g\":\"### ChatGPT\\:\"|join:\"\\n\\n\"|markdown|replace:(\"\\\\###\":\"###\",\"##### \":\"## \",\"\\\\.\":\".\")|replace:(\"### ChatGPT\\:\":\"\",\"/\\[\\n+/gm\":\"[\",/\\n+Google Docs\\n+/gm\":\"\")}}",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{selector:div.page-title > h1|safe_name}}",
+			"type": "text"
+		},
+		{
+			"name": "source",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{author}}",
+			"type": "multitext"
+		},
+		{
+			"name": "published",
+			"value": "{{published|date:\\\"YYYY-MM-DD HH:mm:ss\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "created",
+			"value": "{{time|date:\\\"YYYY-MM-DD HH:mm:ss\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "clippings, {{author|kebab}}, {{time|date:\\\"YYYY/MM/DD\\\"}}, {{site|kebab}}, {{meta:name:og:type|kebab}}, {{meta:name:keywords}}",
+			"type": "multitext"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "words",
+			"value": "{{words}}",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"https://aistudio.google.com/prompts"
+	],
+	"noteNameFormat": "{{selector:div.page-title > h1|safe_name}}",
+	"path": "Clippings/Chats",
+	"context": "# {{title|safe_name}}\n\n{{selectorHtml:body|markdown|replace:\"/\\(\\d?)\\\\(\\.)/g\":\"$1$2\"|replace:\"/(\\n)\\\\/g\":\"\"}}"
+}
