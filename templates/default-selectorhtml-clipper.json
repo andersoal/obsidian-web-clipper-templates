@@ -2,7 +2,7 @@
 	"schemaVersion": "0.1.0",
 	"name": "Default selectorHTML",
 	"behavior": "create",
-	"noteContentFormat": "# {{title|safe_name}}\n\n## Summary\n\n{{\"Summarise the article in 3 paragraphs, Australian English, followed by a markdown H3 for Key Points with up to 7 bullet points of one short sentence each\"}}\n\n## Content\n\n{{selectorHtml:body|markdown|replace:\"/\\(\\d?)\\\\(\\.)/g\":\"$1$2\"|replace:\"/(\\n)\\\\/g\":\"\"}}",
+	"noteContentFormat": "# {{title|safe_name}}\n\n## Summary\n\n{{\"Summarise the article in 3 paragraphs, Australian English, followed by a markdown H3 for Key Points with up to 7 bullet points of one short sentence each\"}}\n\n## Content\n\n{{selectorHtml:body|markdown|remove_html:(\"iframe\")|replace:\"/[\\h\\v\\n\\t\\s\\R]*?(\\n)?[\\h\\v\\n\\t\\s\\R]*?\\(?:!\\[.*?(?:favicon)?.*?\\]\\)[\\h\\v\\n\\t\\s\\R]*?(.*?\\)[\\h\\v\\n\\t\\s\\R]*?(\\n)?/gm\":\"$1$2\"|replace:\"/\\(\\d?)\\\\(\\.)/g\":\"$1$2\"|replace:\"/(\\n)\\\\/g\":\"\"|replace:\"\\!?(\\[)[\\h\\v\\n\\t\\s\\R]*?(\\S.*?)[\\h\\v\\n\\t\\s\\R]*?(\\][\\h\\v\\n\\t\\s\\R]*?(\\(.*?\\))/gm\":\"$1$2$3$4\"}}",
 	"properties": [
 		{
 			"name": "title",
