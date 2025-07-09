@@ -7,7 +7,7 @@
 		{
 			"name": "created",
 			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm:ssZ\\\"}}",
-			"type": "date"
+			"type": "datetime"
 		},
 		{
 			"name": "reviewed",
