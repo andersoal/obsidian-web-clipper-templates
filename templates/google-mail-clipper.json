@@ -16,7 +16,7 @@
 		},
 		{
 			"name": "url",
-			"value": "https://mail.google.com/mail/#inbox/{{selector:div.ha > h2?data-thread-perm-id}}",
+			"value": "https://mail.google.com/mail/u/?authuser={{selector:span.g2?email}}#inbox/{{selector:div.ha > h2?data-legacy-thread-id}}",
 			"type": "text"
 		},
 		{
