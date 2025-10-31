@@ -2,7 +2,7 @@
 	"schemaVersion": "0.1.0",
 	"name": "Letterboxd",
 	"behavior": "create",
-	"noteNameFormat": "{{schema:@Movie:name|safe_name|trim}}",
+	"noteNameFormat": "{{schema:@Movie:name}}",
 	"path": "References",
 	"noteContentFormat": "",
 	"properties": [

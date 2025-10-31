@@ -2,7 +2,7 @@
 	"schemaVersion": "0.1.0",
 	"name": "IMDB reference",
 	"behavior": "create",
-	"noteNameFormat": "{{selector:.hero__primary-text|safe_name|trim}}",
+	"noteNameFormat": "{{selector:.hero__primary-text}}",
 	"path": "References",
 	"noteContentFormat": "",
 	"properties": [
