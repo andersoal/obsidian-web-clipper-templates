@@ -1,0 +1,14 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Daily Note Link Mention",
+	"behavior": "append-daily",
+	"noteContentFormat": "## {{title}}\nURL: {{url}}\n\n{{highlights|map: item => item.text|join:\"\\n\\n\"}}",
+	"properties": [
+		{
+			"name": "tags",
+			"value": "clippings",
+			"type": "multitext"
+		}
+	],
+	"triggers": []
+}

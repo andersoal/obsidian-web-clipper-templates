@@ -1,0 +1,51 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Default",
+	"behavior": "create",
+	"noteContentFormat": "{{content}}",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "source",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{author|split:\\\", \\\"|wikilink|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "published",
+			"value": "{{published}}",
+			"type": "datetime"
+		},
+		{
+			"name": "created",
+			"value": "{{date}}",
+			"type": "datetime"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "clippings,🔗{{site|kebab|safe_name|trim}}",
+			"type": "multitext"
+		},
+		{
+			"name": "reviewed",
+			"value": "",
+			"type": "checkbox"
+		}
+	],
+	"triggers": [],
+	"noteNameFormat": "{{title}} - {{site}} - {{date|date:\"YY-MM-DD\"}}",
+	"path": "PKM/Clippings"
+}

@@ -5,34 +5,34 @@
 	"noteContentFormat": "\n#mail/unread\n\n> [!INFO]+ Message details\n> Received: {{selector:span[class=\"g3\"]?title|last|date:\"YYYY-MM-DDTHH:mm\"}}\n> Subject: {{selector:div.ha > h2}}\n\n\n# {{selector:div.ha > h2}}\n\n{{selectorHtml:div.a3s|replace:\"tbody\":\"\"|replace:\"table\":\"\"|replace:\"td\":\"\"|replace:\"tr\":\"\"|markdown|strip_tags:(\"border\")|replace:\"<>\":\"\"|replace:\"     \":\"\"|replace:\"    \":\"\"}}\n",
 	"properties": [
 		{
+			"name": "title",
+			"value": "{{selector:div.ha > h2}}",
+			"type": "text"
+		},
+		{
+			"name": "source",
+			"value": "https://mail.google.com/mail/u/?authuser={{selector:span.g2?email}}#inbox/{{selector:div.ha > h2?data-legacy-thread-id}}",
+			"type": "text"
+		},
+		{
 			"name": "created",
 			"value": "{{time|date:\\\"YYYY-MM-DDTHH:mm:ssZ\\\"}}",
+			"type": "datetime"
+		},
+		{
+			"name": "published",
+			"value": "{{selector:span[class=\\\"g3\\\"]?title|last|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
 			"type": "datetime"
 		},
 		{
 			"name": "reviewed",
 			"value": "",
 			"type": "datetime"
-		},
-		{
-			"name": "url",
-			"value": "https://mail.google.com/mail/u/?authuser={{selector:span.g2?email}}#inbox/{{selector:div.ha > h2?data-legacy-thread-id}}",
-			"type": "text"
-		},
-		{
-			"name": "received",
-			"value": "{{selector:span[class=\\\"g3\\\"]?title|last|date:\\\"YYYY-MM-DDTHH:mm\\\"}}",
-			"type": "datetime"
-		},
-		{
-			"name": "subject",
-			"value": "{{selector:div.ha > h2}}",
-			"type": "text"
 		}
 	],
 	"triggers": [
 		"https://mail.google.com/mail"
 	],
 	"noteNameFormat": "{{selector:span[class=\"g3\"]?title|date:\"YYYY-MM-DD\"|safe_name}} MAIL {{selector:div.ha > h2|safe_name|trim}}",
-	"path": "Clippings/Mail"
+	"path": "PKM/Clippings/Mail"
 }
