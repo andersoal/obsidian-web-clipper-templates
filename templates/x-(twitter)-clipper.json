@@ -1,0 +1,44 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "X (Twitter)",
+	"behavior": "create",
+	"noteContentFormat": "# {{selector:article[data-testid=\"tweet\"] [data-testid=\"User-Name\"] span|first}}\n\n**Handle:** @{{url|split:\"/\"|slice:3,4|first}}\n**Date:** {{selector:article[data-testid=\"tweet\"] time?datetime|date:\"YYYY-MM-DD HH:mm\"}}\n\n---\n\n{{selectorHtml:article[data-testid=\"tweet\"] [data-testid=\"twitterArticleReadView\"]|markdown}}\n\n{{selector:article[data-testid=\"tweet\"] [data-testid=\"tweetPhoto\"] img?src|image:\"\"}}\n\n---\n[View Tweet]({{url}})",
+	"properties": [
+		{
+			"name": "author",
+			"value": "{{selector:article[data-testid=\\\"tweet\\\"] [data-testid=\\\"User-Name\\\"] span|first}}",
+			"type": "multitext"
+		},
+		{
+			"name": "handle",
+			"value": "{{url|split:\\\"/\\\"|slice:3,4|first}}",
+			"type": "text"
+		},
+		{
+			"name": "published",
+			"value": "{{selector:article[data-testid=\\\"tweet\\\"] time?datetime}}",
+			"type": "datetime"
+		},
+		{
+			"name": "source",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "clippings, tweet",
+			"type": "multitext"
+		},
+		{
+			"name": "type",
+			"value": "tweet",
+			"type": "text"
+		}
+	],
+	"triggers": [
+		"x.com",
+		"twitter.com"
+	],
+	"noteNameFormat": "Tweet - {{selector:article[data-testid=\"tweet\"] [data-testid=\"User-Name\"] span|first|safe_name}} - {{selector:article[data-testid=\"tweet\"] [data-testid=\"tweetText\"]|text|slice:0,50|safe_name}}",
+	"path": "Clippings/Tweets"
+}
