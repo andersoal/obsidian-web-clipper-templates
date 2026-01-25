@@ -4,11 +4,11 @@
 	"behavior": "create",
 	"noteNameFormat": "{{schema:author|safe_name|trim}} – {{schema:name|safe_name|trim}}",
 	"path": "Clippings/Videos",
-	"noteContentFormat": ">[!summary]- Summary\n{{\"a bulleted summary of the youtube transcript\"|blockquote}}\n\n{{content}}\n\n# Transcript\n{{selectorHtml:.ytd-transcript-segment-list-renderer|replace:\\\"&nbsp;\\\":\\\" \\\"|join|markdown}}",
+	"noteContentFormat": ">[!summary]- Summary\n{{\"a bulleted summary of the youtube transcript\"|blockquote}}\n\n{{content}}\n\n# Transcript\n{{selectorHtml:.ytd-transcript-segment-list-renderer|replace:\\\"&nbsp;\\\":\\\" \\\"|join|markdown}}\n![{{schema:name}}]({{url}})",
 	"properties": [
 		{
 			"name": "title",
-			"value": "{{title}}",
+			"value": "{{schema:name}}",
 			"type": "text"
 		},
 		{

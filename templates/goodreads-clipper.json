@@ -2,15 +2,15 @@
 	"schemaVersion": "0.1.0",
 	"name": "Goodreads",
 	"behavior": "create",
-	"noteNameFormat": "{{selector:.BookPageTitleSection__title h1|safe_name|trim}}",
-	"path": "Clippings",
+	"noteNameFormat": "{{selector:.BookPageTitleSection__title h1}}",
+	"path": "References",
 	"noteContentFormat": "{{selector:.BookPageMetadataSection__description}}",
 	"properties": [
-        {
-            "name": "categories",
-            "value": "[[Books]]",
-            "type": "multitext"
-        },
+		{
+			"name": "categories",
+			"value": "[[Books]]",
+			"type": "multitext"
+		},
 		{
 			"name": "title",
 			"value": "{{selector:.BookPageTitleSection__title h1}}",
@@ -33,7 +33,7 @@
 		},
 		{
 			"name": "year",
-			"value": "{{selector:p[data-testid='publicationInfo']|split:\\\"First published \\\"|slice:1|date:\\\"YYYY\\\"}}",
+			"value": "{{selector:p[data-testid='publicationInfo']|split:""|last}}",
 			"type": "number"
 		},
 		{
