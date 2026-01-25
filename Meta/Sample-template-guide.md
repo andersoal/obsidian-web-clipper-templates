@@ -21,7 +21,7 @@ tags: Meta
 ![IMAGE ALT TEXT](IMAGE HERE)
 
 
-## 
+##
 
 ### Related resources
 %% Add a link to the .json download. Erase if there is none. %%
@@ -35,7 +35,7 @@ You can also copy the codeblock below to paste into Obsidian Clipper with the fo
 4. Select **New template**.
 5. Select the **Import** button
 6. Paste the `.json` content into the Json template area.
-7. Select import. 
+7. Select import.
 
 ## Template codeblock
 
