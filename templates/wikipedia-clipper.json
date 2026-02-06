@@ -1,48 +1,48 @@
 {
-	"schemaVersion": "0.1.0",
-	"name": "Wikipedia",
-	"behavior": "create",
-	"noteContentFormat": "{{selectorHtml:#mw-content-text|remove_html:(\".navbox,.printfooter,.side-box\")|markdown}}",
-	"properties": [
-		{
-			"name": "categories",
-			"value": "[[Clippings]]",
-			"type": "multitext"
-		},
-		{
-			"name": "title",
-			"value": "{{title}}",
-			"type": "text"
-		},
-		{
-			"name": "source",
-			"value": "{{url}}",
-			"type": "text"
-		},
-		{
-			"name": "author",
-			"value": "[[Wikipedia]]",
-			"type": "multitext"
-		},
-		{
-			"name": "created",
-			"value": "{{date}}",
-			"type": "date"
-		},
-		{
-			"name": "description",
-			"value": "{{description}}",
-			"type": "text"
-		},
-		{
-			"name": "tags",
-			"value": "clippings, wikipedia",
-			"type": "multitext"
-		}
-	],
-	"triggers": [
-		"/^https:\\/\\/[a-z-.]+\\.wikipedia\\.org\\/wiki\\/.*$/"
-	],
-	"noteNameFormat": "{{title|safe_name|trim}}",
-	"path": "Clippings/Wikipedia"
+  "schemaVersion": "0.1.0",
+  "name": "Wikipedia",
+  "behavior": "create",
+  "noteContentFormat": "{{selectorHtml:#mw-content-text|remove_html:(\".navbox,.printfooter,.side-box\")|markdown}}",
+  "properties": [
+    {
+      "name": "categories",
+      "value": "[[Clippings]]",
+      "type": "multitext"
+    },
+    {
+      "name": "title",
+      "value": "{{title}}",
+      "type": "text"
+    },
+    {
+      "name": "source",
+      "value": "{{url}}",
+      "type": "text"
+    },
+    {
+      "name": "author",
+      "value": "[[Wikipedia]]",
+      "type": "multitext"
+    },
+    {
+      "name": "created",
+      "value": "{{date}}",
+      "type": "date"
+    },
+    {
+      "name": "description",
+      "value": "{{description}}",
+      "type": "text"
+    },
+    {
+      "name": "tags",
+      "value": "clippings, wikipedia",
+      "type": "multitext"
+    }
+  ],
+  "triggers": [
+    "/^https:\\/\\/[a-z-.]+\\.wikipedia\\.org\\/wiki\\/.*$/"
+  ],
+  "noteNameFormat": "{{title|safe_name|trim}}",
+  "path": "PKM/Clippings/Wikipedia"
 }

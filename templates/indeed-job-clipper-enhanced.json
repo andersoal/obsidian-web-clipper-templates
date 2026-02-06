@@ -3,7 +3,7 @@
   "name": "Indeed Job Post",
   "behavior": "create",
   "noteNameFormat": "{{schema:@JobPosting:validThrough|date:\"YYYY-MM-DD\"}} JOB {{schema:@JobPosting:title|safe_name}}",
-  "path": "Clippings/Jobs/{{date|date:\"YYYY/MM - Week WW\"}}",
+  "path": "PKM/Clippings/Jobs/{{date|date:\"YYYY/MM - Week WW\"}}",
   "interpreterContext": "{{schema:@JobPosting:description|remove_html|strip_attr|strip_tags}}",
   "noteContentFormat": "# {{schema:@JobPosting:title}}\n\n**Company:** {{schema:@JobPosting:hiringOrganization.name}}\n\n**Location:** {{schema:@JobPosting:jobLocation.address.addressLocality}}, {{schema:@JobPosting:jobLocation.address.addressRegion}} {{schema:@JobPosting:jobLocation.address.postalCode}}\n\n**Posted on:** {{schema:@JobPosting:datePosted|date:\"YYYY-MM-DD\"}}\n\n**Valid through:** {{schema:@JobPosting:validThrough|date:\"YYYY-MM-DD\"}}\n\n**Apply URL:** [View on Indeed]({{url}})\n\n---\n\n## Description\n\n{{schema:@JobPosting:description|markdown}}\n\n---\n\n## Summary\n\n{{\"Summarise the key responsibilities and required qualifications\"|blockquote}}\n\n---\n\n![{{title}}]({{image}})",
   "properties": [

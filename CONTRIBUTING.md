@@ -136,7 +136,7 @@ A typical template JSON, including an example for YouTube with transcript extrac
 {
   "name": "YouTube with Transcript",
   "noteName": "{{title}} - {{date:YYYY-MM-DD}}",
-  "noteLocation": "Clippings/YouTube",
+  "noteLocation": "PKM/Clippings/YouTube",
   "vault": "YourVaultName",  // Optional: default vault
   "content": "---\nTitle: {{title}}\nURL: {{url}}\nPublished: {{published}}\n---\n\n## Video Details\n{{content}}\n\n## Transcript\n{{transcript}}\n\n## Optional Summary\n{{#if plugin:ObsidianAI}}{{ai:summary:transcript}}{{/if}}",
   "triggers": [
