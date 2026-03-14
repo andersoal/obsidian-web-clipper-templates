@@ -28,12 +28,12 @@
 		},
 		{
 			"name": "pages",
-			"value": "{{selector:p[data-testid='pagesFormat'|split:\\\", \\\"|slice:0|split:\\\" \\\"|slice:0}}",
+			"value": "{{selector:p[data-testid='pagesFormat']|split:\\\", \\\"|slice:0|split:\\\" \\\"|slice:0}}",
 			"type": "number"
 		},
 		{
 			"name": "year",
-			"value": "{{selector:p[data-testid='publicationInfo']|split:""|last}}",
+			"value": "{{selector:p[data-testid='publicationInfo']|split:\" \"|last}}",
 			"type": "number"
 		},
 		{
